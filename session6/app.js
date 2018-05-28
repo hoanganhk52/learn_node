@@ -7,6 +7,13 @@ const fs = require('fs');
 const methodOverride = require('method-override');
 const questionRouter = require('./router/questionRouter.js');
 const helpers = require('handlebars-helpers')();
+const mongoose = require('mongoose');
+const QuestionModel = require('./model/question.model.js');
+
+mongoose.connect('mongodb://localhost/test', (err) => {
+    if (err) console.log(err);
+    else console.log('DB connect success!');
+});
 
 const app = express();
 app.use(express.static(path.join(__dirname, 'public')));
@@ -24,7 +31,9 @@ app.use((req, res, next) => {
 });
 
 app.get('/', (req, res, next) => {
-    req.questionList = JSON.parse(fs.readFileSync('./questions.json', 'utf8'));
+    QuestionModel.find({}, (err, question) => {
+        if (err)
+    });
     if (req.questionList.length <= 0) res.render('home', {question : {content: 'khong co cau hoi nao'}});
     else next();
 }, function (req, res) {

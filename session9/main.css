@@ -1,0 +1,17 @@
+a.result {
+    display: block;
+    margin-bottom: 20px;
+    color: #000;
+    text-decoration: none;
+}
+a:hover {
+    background: #ccc;
+}
+
+.main {
+    margin-bottom: 100px;
+}
+
+.video_info {
+    padding-top: 20px;
+}
