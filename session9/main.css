@@ -15,3 +15,21 @@ a:hover {
 .video_info {
     padding-top: 20px;
 }
+
+.loading {
+    display: none;
+}
+
+.show-loading{
+    display: block !important;
+    margin: 0 auto;
+}
+
+.no-data {
+    color: red;
+    text-align: center;
+}
+
+#page-token {
+    display: none;
+}
